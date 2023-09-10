@@ -69,9 +69,27 @@
                 or competitively in leagues</td>
             <td>2-4</td>
         </tr>
-
-
     </tbody>
 </table>
+        <hr>
+        <h2>Code Snippet from Stack Overflow</h2>
+        
+         
+         <blockquote>
+            <p>How can I remove the width attribute from post thumbnails and images inserted into the editor?</p>
+            <footer>Source: <a href="https://stackoverflow.com/questions/27784710" target="_blank">Stack Overflow</a></footer>
+        </blockquote>
+        <pre>
+            add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+            add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+            
+            function remove_width_attribute( $html ) {
+               $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+               return $html;
+            }
+            </pre>
+            
+
+ 
 
 <body>
